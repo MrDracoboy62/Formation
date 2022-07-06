@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Cours s0407</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="" />
+    <script src=""></script>
+  </head>
+  <body id="haut">
+    <h1>Les bases HTML</h1>
+    <h2>Première approche</h2>
+    <a href="#retour">'go sur l'exemple d'ancre'</a>
+    <p>
+      L'html est un langage non pas de programmation mais de balises. Chacune de
+      ses balises est soit fonctionnelle par paire, soit auto-fermante.<br />
+      Il est important d'indenter son code afin de pouvoir s'y retrouver,
+      surtout quand des divs se retrouvene tdans d'autres (raccourci clavier:
+      Alt + Shift + F<br />
+      Chaque balise peut être distinguées de ses collègues par une classe ou un
+      ID. Ces derniers permettent d'appeler son contenu ou son style avec
+      d'autres pages, ou directmeent le css:<br />
+      Exemple: img src="lien.fr" alt="Je suis une image" class="coucou" id=salut
+    </p>
+    <h2>Structure de base</h2>
+    (P.S.: chaque > signifie "balise", donc doit entourer son contenu de < >)<br />
+    >!DOCTYPE html <br />>html <br />>head <br />>title Titre dans l'entête
+    >/title <br />>/head <br />>body <br />>p Paragraphe contenu >/p
+    <br />>/body <br />>/html
+    <p>
+      Il est possible de recréer ce code automatiquement à la création d'une
+      page:
+    </p>
+    <ul>
+      <li>
+        ! + tab dans la barre de recherche; pour sélectionner l'entête html à la
+        création d'un fichier;
+      </li>
+      <li>
+        Ctrl + Espace; pour pouvoir charger la structure de base (à condition
+        que le format du fichier soit déjà enregistré en .html)
+      </li>
+    </ul>
+    <p>
+      La balise head permet d'intégrer les informations annexes de la page.
+      Seule la balise titile et son contenu seront visibles sur le
+      navigateur.<br />
+      Ce dernier permet de changer le texte affiché dans l'étiquette de "nouvel
+      onglet" sur votre navigateur.<br />
+      Le reste de la balise head va surtout réunir les documents importants pour
+      dynamiser ou décorer l'affichage de notre page Html, en lui ajoutant des
+      contenus comme du CSSS ou du JavaScript:
+    </p>
+    <ul>
+      <li>
+        >meta charset="utf-8"; permet de lire chaque caractère spécial
+        correctement, sinon il affichera ce qu'il pourra;
+      </li>
+      <li>
+        meta name="keywords" content="mes,mots,clés"; permet de référenceer la
+        page plus facilement grâce à une liste de mots-clés;
+      </li>
+      <li>
+        meta name="description" content="description personnalisée"; permet de
+        donner une description personnalisée lorsque le navigateur demandera une
+        recherche du site;
+      </li>
+      <li>
+        link rel="stylesheet" href="main.css"; signifie que le navigateur doit
+        rechercher un fichier stylesheet ayant comme nom de document main.css
+        pour afficher la page avec un certain style contenu dans ce fichier;
+      </li>
+      <li>
+        script type="text/javascript"
+        src="chemin/vers/mon/fichier/javascript.js"; permet au navigateur de
+        rajouter des scripts JavaScript sur la page, en utilisant le lien fourni
+        pour fonctionner. On fait appel à certains de leurs scripts dans la
+        balise body grâce à la balise >script
+      </li>
+    </ul>
+    <p>
+      P.S.: Il est conseillé de faire appel au script uniquement dans le body,
+      car le navigateur va lire la page ligne par ligne, et s'il y a un problème
+      dans ce script et qu'il est placé avant le contenu de la page html, le
+      navigateur risque de planter son chargement à cause du script.
+    </p>
+    <h2>Le "body"</h2>
+    <p>Il existe deux grandes classes d'élément:</p>
+    <ol>
+      <li>
+        Block: l'élément prend toute la largeur de la ligne et chaque élément se
+        place l'un en dessous de l'autre. Il peut néanmoins contenir plusieurs
+        éléments inline;
+      </li>
+      <li>
+        Inline: l'élément prend la largeur de son contenu et peut aussi contenir
+        des éléments inline, mais pas d'élément block.
+      </li>
+    </ol>
+    <h3>Les titres</h3>
+    <p>
+      Il est possible d'écrire plusieurs tailles de titres dans une page, les
+      tailles varient selon si l'ont utilise un chiffre plus ou moins grand
+      compris entre 1 et 6, précédé de la lettre h dans sa balise:
+    </p>
+    <ol>
+      <li>
+        <h1>Bonjour</h1>
+        en h1
+      </li>
+      <li>
+        <h2>Bonjour</h2>
+        en h2
+      </li>
+      <li>
+        <h3>Bonjour</h3>
+        en h3
+      </li>
+      <li>
+        <h4>Bonjour</h4>
+        en h4
+      </li>
+      <li>
+        <h5>Bonjour</h5>
+        en h5
+      </li>
+      <li>
+        <h6>Bonjour</h6>
+        en h6
+      </li>
+    </ol>
+    <h3>Les liens</h3>
+    <p>
+      Il est possible de faire appel à un élément extérieur à la page en lui
+      intégrant un lien depuis un dossier ou un url:<br />
+      >a href="lien.fr">Je possède un lien cliquable>/a; permet d'intégrer le
+      lien vers lien.fr sur un texte;<br />
+      >img src="../image.png"; permet d'ouvrir l'image contenue dans le dossier
+      parent du fichier actuel, le lien présent peut changer selon
+      l'organisation des fichiers du site.<br />
+      Le premier lien est un lien absolu car il désigne un lien qui est
+      accessible de partout avec cette adresse. Le second est dit relatif car ce
+      chemin peut changer selon l'organisation des fichiers internes du site.<br /><br />
+      Il est même possible de créer un lien vers une création de mail: <br />
+      a href="mailto:mail@contact.fr"; permet de créer un lien cliquable vers un
+      envoi de mail à l'adresse ciblée.
+    </p>
+    <p>
+      Lors de l'utilisation de liens internes au site, il est possible de
+      naviguer entre chaque fichier et dossier par ce biais:<br />
+    </p>
+    <ul>
+      <li>
+        .. permet de cibler le dossier qui contient la page ciblée actuellement,
+        cela permet de revenir au dossier-parent;
+      </li>
+      <li>/ permet d'entrer dans le dossier visé actuellement.</li>
+    </ul>
+    <p>
+      Il est conseillé de toujours intégrer les attributs src et alt aux images,
+      la première pour intégrer son lien pour être trouvée, la seconde pour
+      permettre une lecture orale aux personnes malvoyantes, ou si le chargement
+      de l'image a échoué.
+    </p>
+    <h3>Les tableaux</h3>
+    <p>
+      On appelle à la création et l'affichage d'un tableau par la balise table.
+      Il est ensuite réparti en lignes:
+    </p>
+    <ul>
+      <li>On ouvre le tableau avec la balise table;</li>
+      <li>On indente chaque ligne du tableau une par une avec la balise tr;</li>
+      <li>
+        On créé une étiquette (affichée en gras de base) avec la balise th;
+      </li>
+      <li>On créé une cellule de base avec la balise td;</li>
+      <li>
+        Chaque cellule du tableau peut posséder un style CSs particulier avec sa
+        classe, ou trier par balise, ligne ou encore tableau directement.
+      </li>
+    </ul>
+    <p>
+      Il est possible de fusionner plusieurs cellules d'un tableau grâce aux
+      attributs colspan et rowspan:<br />
+    </p>
+    <ol>
+      <li>
+        colspan permet de fusionner deux cellules dans le même tr, deux celulles
+        l'une à côté de l'autre ne feront plus qu'une;
+      </li>
+      <li>
+        rowspan permet de fusionner deux cellules l'une sous l'autre, cela peut
+        permettre de fusionner deux lignes sur quelques cellules en les
+        désignant avec et attribut.
+      </li>
+    </ol>
+    <h3>Les listes</h3>
+    <p>
+      On peut créer des lites numérotées ou à puces selon la balise utilisée. ul
+      désigne les listes à puces, tandis que ol désigne les listes
+      numérotées.<br />
+      Il est aussi possible d'indenter une liste dans une liste déjà
+      existante:<br />
+    </p>
+    <ul>
+      <li>Je suis première !</li>
+      <li>Je suis seconde !</li>
+      <ol>
+        <li>Je suis troisième !</li>
+        <li>Non c'est moi !</li>
+      </ol>
+      <li>Je ferme la marche ...</li>
+    </ul>
+    <h3>Les citations</h3>
+    <p>
+      Il existe quelques balises de citation: blockquote, q, abbr, address, cite
+      et les bdo. Chacune a ses spécificités mais très peu utilisées.<br />
+      On peut aussi écrire du html en commentaire en entourant le code avec !--
+      et -- (ne pas oublier d'ouvrir le chevron avant le ! et le fermer après la
+      fin des --).
+    </p>
+    <h3>Les formulaires</h3>
+    <p>
+      On peut faire transiter des informations entre les différentes pages (get)
+      ou via des pages du dossier (post), et on peut les réunir dans un
+      formulaire.<br />Il existe pas mal d'attributs pour par exemple input:
+    </p>
+    <ol>
+      <li><input type="button" /></li>
+      <li>
+        <input type="checkbox" /><input type="checkbox" /><input
+          type="checkbox"
+        />
+      </li>
+      <li><input type="color" /></li>
+      <li><input type="date" /></li>
+      <li><input type="datetime-local" /></li>
+      <li><input type="email" /></li>
+      <li><input type="file" /></li>
+      <li><input type="hidden" /></li>
+      <li><input type="image" /></li>
+      <li><input type="month" /></li>
+      <li><input type="number" /></li>
+      <li><input type="password" /></li>
+      <li>
+        <input type="radio" name="1" value="1" /><input
+          type="radio"
+          name="1"
+          value="2"
+        /><input type="radio" name="1" value="3" />
+      </li>
+      <li><input type="range" /></li>
+      <li><input type="reset" /></li>
+      <li><input type="search" /></li>
+      <li><input type="submit" /></li>
+      <li><input type="tel" /></li>
+      <li><input type="text" /></li>
+      <li><input type="time" /></li>
+      <li><input type="url" /></li>
+      <li><input type="week" /></li>
+    </ol>
+    <p>
+      L'option select permet de faire une sélection parmi une liste d'options:
+      <br />
+    </p>
+    <label for="cars">Choose a car:</label>
+    <select id="cars" name="cars">
+      <option value="volvo">Volvo</option>
+      <option value="saab" selected>Saab</option>
+      <option value="fiat">Fiat</option>
+      <option value="audi">Audi</option>
+    </select>
+    <p>
+      On peut faire en sorte qu'une option soit affichée par défaut avec
+      selected dans sa balise option.<br />
+      On peut utiliser size pour définir le nombre d'objets visibles par défaut.
+      L'attribut multiple permet de pouvoir sélectionner plusieurs options à la
+      fois (en maintenant Ctrl appuyé):<br />
+    </p>
+    <label for="cars">Choose a car:</label>
+    <select id="cars" name="cars" size="2" multiple>
+      <option value="volvo">Volvo</option>
+      <option value="saab">Saab</option>
+      <option value="fiat">Fiat</option>
+      <option value="audi">Audi</option>
+      <option value="twingo">Twingo</option>
+      <option value="truck">Truck</option>
+    </select>
+    <p>
+      On peut définir une zone d'écriture grâce à l'attribut textarea. On peut
+      le définir avec rows="X" et cols="Y", où X et Y sont des nombres entiers
+      et désignent le nombre respectif de lignes et de colonnes:<br />
+    </p>
+    <textarea name="message" rows="2" cols="20">
+This is a useless message !
+    </textarea>
+    <p>Exemple de formulaire:</p>
+    <form action="/action_page.php" method="post">
+      <label for="fname">First name:</label><br />
+      <input type="text" id="fname" name="fname" value="John" /><br />
+      <input type="radio" id="html" name="fav_language" value="HTML" />
+      <label for="html">HTML</label><br />
+      <input type="radio" id="css" name="fav_language" value="CSS" />
+      <label for="css">CSS</label><br />
+      <input
+        type="radio"
+        id="javascript"
+        name="fav_language"
+        value="JavaScript"
+      />
+      <label for="javascript">JavaScript</label>
+      <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" />
+      <label for="vehicle1"> I have a bike</label><br />
+      <input type="checkbox" id="vehicle2" name="vehicle2" value="Car" />
+      <label for="vehicle2"> I have a car</label><br />
+      <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat" />
+      <label for="vehicle3"> I have a boat</label>
+      <input type="submit" value="Submit" />
+      <input type="reset" value="reset" />
+    </form>
+    <h3>Les ancres</h3>
+    <p id="retour">
+      Une ancre se définit par une id d'une balise. Cette dernière permet de
+      rediriger un lien cliquable vers lui lorsque ce lien le
+      <a href="#haut">cible</a>.
+    </p>
+    <p>
+      P.S.: Petits tips, il est possible de créer plusieurs balises, avec un id
+      qui s'incrémente et du contenu déterminé: p#chap$*6>lorem500 par exemple:
+    </p>
+    <ol>
+      <li>une balise paragraphe</li>
+      <li>à l'id chap1 à 6</li>
+      <li>en 6 exemplaires</li>
+      <li>contenant 500 caractères de lorem ipsium</li>
+    </ol>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+@font-face {
+    font-family: 'Wanted';
+    src:url('../font/helldorado-11136/Helldorado-eVrp.ttf');
+}
+.red {
+    color : rgba(255, 0, 0, 0.863);
+}
+.blue {
+    color: blue;
+}
+.presentation {
+    text-align: center;
+}
+img {
+    display: block;
+    margin: auto;
+}
+h1 {
+    font-family: 'Wanted';
+    font-size: 5rem;
+    text-align: center;
+}
+
+section {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content:space-evenly;
+    align-items: stretch;
+}
+article {
+    background-image: url("../images/parchemin.png");
+    background-size:cover;
+    width: 30%;
+    background-repeat: no-repeat;
+}    
+.presentation {
+    font-weight: bolder;
+    align-content: center;
+}
+.presentation>img {
+    width : 150px;
+    height: 150px;
+}
+p, li {
+    font-style: italic;
+    margin-left: 15px;
+}
+h4 {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+}
+h2, h5 {
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+}
+h2 {
+    font-size: 2rem;
+}
+.complice {
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content:space-around;
+    align-items: baseline;
+    font-weight: bold;
+}
+.first, .second {
+    text-align: center;
+}
